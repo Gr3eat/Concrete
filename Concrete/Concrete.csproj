@@ -17,6 +17,7 @@
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.2" />
     <PackageReference Include="Avalonia" Version="0.10.10" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
@@ -26,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Concrete.MoodleEditor\Concrete.MoodleEditor.csproj" />
     <ProjectReference Include="..\Concrete.Mvvm\Concrete.Mvvm.csproj" />
+    <ProjectReference Include="..\Concrete.Storage\Concrete.Storage.csproj" />
     <ProjectReference Include="..\EasyIOC\EasyIOC.csproj" />
   </ItemGroup>
   <ItemGroup>
