@@ -14,6 +14,7 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <Folder Include="ViewModels\" />
     <None Remove=".gitignore" />
   </ItemGroup>
   <ItemGroup>
@@ -23,16 +24,12 @@
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Concrete.MoodleEditor\Concrete.MoodleEditor.csproj" />
     <ProjectReference Include="..\Concrete.Mvvm\Concrete.Mvvm.csproj" />
     <ProjectReference Include="..\Concrete.Storage\Concrete.Storage.csproj" />
     <ProjectReference Include="..\EasyIOC\EasyIOC.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Views\CourseEditView.axaml.cs">
-      <DependentUpon>CourseEditView.axaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>

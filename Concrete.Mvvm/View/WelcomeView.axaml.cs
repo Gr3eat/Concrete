@@ -2,16 +2,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Concrete.Views
+namespace Concrete.Mvvm.View
 {
-	public partial class CourseEditView : Window
+	public partial class WelcomeView : UserControl
 	{
-		public CourseEditView()
+		public WelcomeView()
 		{
 			InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
 		}
 
 		private void InitializeComponent()

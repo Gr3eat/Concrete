@@ -10,4 +10,8 @@
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EasyIOC\EasyIOC.csproj" />
+  </ItemGroup>
+
 </Project>

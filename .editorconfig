@@ -12,7 +12,7 @@ indent_style = tab
 #Formatting - new line options
 
 #require braces to be on a new line for lambdas, methods, types, and control_blocks (also known as "Allman" style)
-csharp_new_line_before_open_brace = lambdas, methods, types, control_blocks
+csharp_new_line_before_open_brace =all
 
 #Formatting - organize using options
 
@@ -102,6 +102,7 @@ csharp_prefer_simple_using_statement=true:error
 csharp_style_conditional_delegate_call=true:error
 csharp_style_unused_value_assignment_preference=discard_variable:error
 csharp_prefer_simple_default_expression=true:error
+insert_final_newline=true
 
 [*.{cs,vb}]
 dotnet_style_qualification_for_method=false:error

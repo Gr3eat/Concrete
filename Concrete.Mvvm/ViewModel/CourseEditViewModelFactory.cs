@@ -1,7 +1,7 @@
 ﻿using Concrete.MoodleEditor.Data;
 using Concrete.Storage;
 
-namespace Concrete.ViewModels;
+namespace Concrete.Mvvm.ViewModel;
 
 public class CourseEditViewModelFactory : ICourseEditViewModelFactory
 {
@@ -12,5 +12,5 @@ public class CourseEditViewModelFactory : ICourseEditViewModelFactory
 		_storageService = storageService;
 	}
 
-	public ICourseEditViewModel Create(CourseEntity? course) => new CourseEditViewModel(course, _storageService);
+	public ICourseEditViewModel Create(CourseEntity course) => new CourseEditViewModel(course, _storageService);
 }

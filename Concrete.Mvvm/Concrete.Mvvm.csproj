@@ -1,21 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
-		<UseMaui>true</UseMaui>
-		<SingleProject>true</SingleProject>
+		<TargetFrameworks>net6.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <WarningLevel>5</WarningLevel>
+    <AnalysisLevel>preview</AnalysisLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 
-		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</SupportedOSPlatformVersion>
-		<TargetPlatformMinVersion Condition="$(TargetFramework.Contains('-windows'))">10.0.17763.0</TargetPlatformMinVersion>
-	</PropertyGroup>
+  </PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
 	  <PackageReference Include="ReactiveUI" Version="16.3.10" />
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.2" />
+    <PackageReference Include="Avalonia" Version="0.10.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
+  </ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Concrete.MoodleEditor\Concrete.MoodleEditor.csproj" />
+	  <ProjectReference Include="..\Concrete.Storage\Concrete.Storage.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="View\CourseEditView.axaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\WelcomeView.axaml.cs">
+	    <DependentUpon>%(Filename)</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
