@@ -1,0 +1,40 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Concrete.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Concrete.Views.CourseEditView"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Concrete">
+  <Panel>
+    <ExperimentalAcrylicBorder IsHitTestVisible="False">
+      <ExperimentalAcrylicBorder.Material>
+        <ExperimentalAcrylicMaterial
+            BackgroundSource="Digger"
+            TintColor="Black"
+            TintOpacity="1"
+            MaterialOpacity="0.65" />
+      </ExperimentalAcrylicBorder.Material>
+    </ExperimentalAcrylicBorder>
+    <DockPanel LastChildFill="True">
+      <Menu DockPanel.Dock="Top" IsHitTestVisible="True">
+        <MenuItem Header="_File">
+          <MenuItem Header="_Open..."/>
+          <Separator/>
+          <MenuItem Header="_Exit"/>
+        </MenuItem>
+        <MenuItem Header="_Edit">
+          <MenuItem Header="Copy"/>
+          <MenuItem Header="Paste"/>
+        </MenuItem>
+      </Menu>
+
+        <TextBlock Foreground="Black">This content will "Fill" the remaining space</TextBlock>
+
+
+    </DockPanel>
+  </Panel>
+</Window>

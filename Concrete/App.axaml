@@ -3,7 +3,6 @@
              xmlns:local="using:Concrete"
              x:Class="Concrete.App">
     <Application.DataTemplates>
-        <local:ViewLocator/>
     </Application.DataTemplates>
 
     <Application.Styles>

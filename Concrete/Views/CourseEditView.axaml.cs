@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Concrete.Views
 {
-	public partial class MainWindow : Window
+	public partial class CourseEditView : Window
 	{
-		public MainWindow()
+		public CourseEditView()
 		{
 			InitializeComponent();
 #if DEBUG

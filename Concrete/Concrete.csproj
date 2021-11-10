@@ -23,4 +23,14 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.10" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Concrete.MoodleEditor\Concrete.MoodleEditor.csproj" />
+    <ProjectReference Include="..\Concrete.Mvvm\Concrete.Mvvm.csproj" />
+    <ProjectReference Include="..\EasyIOC\EasyIOC.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\CourseEditView.axaml.cs">
+      <DependentUpon>CourseEditView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
