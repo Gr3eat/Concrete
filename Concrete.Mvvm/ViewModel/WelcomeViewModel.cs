@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concrete.Mvvm.ViewModel
+namespace Concrete.Mvvm.ViewModel;
+
+public class WelcomeViewModel : ViewModelBase
 {
-	public class WelcomeViewModel
-	{
-	}
 }

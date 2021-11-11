@@ -27,6 +27,6 @@
             MaterialOpacity="0.65" />
       </ExperimentalAcrylicBorder.Material>
     </ExperimentalAcrylicBorder>
-    <ContentControl Margin="0" Content="{Binding ViewModel}"/>
+    <ContentControl Margin="0" Content="{Binding VM}"/>
   </Panel>
 </Window>

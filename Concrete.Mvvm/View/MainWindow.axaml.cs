@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Concrete.Mvvm.ViewModel;
+using System.ComponentModel;
 
 namespace Concrete.Mvvm.View;
 
@@ -11,7 +12,7 @@ public partial class MainWindow : Window
 
 	public MainWindow()
 	{
-		DataContext = this;
+		DataContext = new DummyVm();
 		InitializeComponent();
 #if DEBUG
 		this.AttachDevTools();
@@ -24,7 +25,7 @@ public partial class MainWindow : Window
 		set
 		{
 			_viewModel = value;
-			Content = value;
+			((DummyVm)DataContext!).VM = value!;
 		}
 	}
 
@@ -32,4 +33,27 @@ public partial class MainWindow : Window
 	{
 		AvaloniaXamlLoader.Load(this);
 	}
+
+	internal class DummyVm : INotifyPropertyChanged
+	{
+		private IViewModel? _viewModel;
+
+		public DummyVm()
+		{
+		}
+
+		public IViewModel VM
+		{
+			get => _viewModel!;
+			set
+			{
+				_viewModel = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(VM)));
+
+			}
+		}
+
+		public event PropertyChangedEventHandler? PropertyChanged;
+	}
+
 }

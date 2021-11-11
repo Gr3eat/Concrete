@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Concrete.Mvvm.View;
@@ -22,10 +23,15 @@ public class App : Application
 	public override void OnFrameworkInitializationCompleted()
 	{
 		if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-			desktop.MainWindow = new MainWindow()
-			{
-				ViewModel = _serviceProvider.GetRequiredService<ICourseEditViewModelFactory>().Create(new("test"))
-			};
+		{
+			var entrypoint = _serviceProvider.GetRequiredService<IEntryPoint>();
+			var window = entrypoint.Start(desktop.Args);
+			if (window is not null)
+				desktop.MainWindow = window;
+			else
+				desktop.Shutdown(0);
+
+		}
 
 		base.OnFrameworkInitializationCompleted();
 	}
@@ -33,7 +39,7 @@ public class App : Application
 	private static IServiceProvider InstallServices()
 	{
 		var services = new ServiceCollection();
-
+		services.AddTransient<IEntryPoint, EntryPoint>();
 		return services
 			.WithEasyIoc(Assembly.GetExecutingAssembly())
 			.BuildServiceProvider();
