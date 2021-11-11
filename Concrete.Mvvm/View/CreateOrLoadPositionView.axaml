@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Concrete.Mvvm.View.CreateOrLoadPositionView">
+  <Border CornerRadius="10" Padding="5" Background="#40000000" Opacity="0.8" BorderBrush="#40000000">
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="auto"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="auto"/>
+      </Grid.RowDefinitions>
+      <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15">Course</TextBlock>
+      <TextBlock Margin="10" TextWrapping="Wrap" Grid.ColumnSpan="3" Grid.Row="1">Very very long and very descriptive description of what the user is about to do, described at great length and in great detail.</TextBlock>
+      <Button Margin="10" Grid.Column="2" Grid.Row="2">Create</Button>
+    </Grid>
+  </Border>
+</UserControl>

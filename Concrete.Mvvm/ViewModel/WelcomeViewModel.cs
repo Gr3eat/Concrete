@@ -9,9 +9,9 @@ namespace Concrete.Mvvm.ViewModel;
 public class WelcomeViewModel : ViewModelBase
 {
 #pragma warning disable CA1822 // Mark members as static
-	public int MaxHeight => 700;
-	public int MaxWidth => 700;
-	public int MinHeight => 700;
-	public int MinWidth => 700;
+	public int MaxHeight => 900;
+	public int MaxWidth => 900;
+	public int MinHeight => 900;
+	public int MinWidth => 900;
 #pragma warning restore CA1822 // Mark members as static
 }

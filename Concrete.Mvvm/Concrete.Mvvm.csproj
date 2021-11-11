@@ -31,6 +31,12 @@
 	  <Compile Update="View\WelcomeView.axaml.cs">
 	    <DependentUpon>%(Filename)</DependentUpon>
 	  </Compile>
+	  <Compile Update="View\CreateOrLoadPositionView.axaml.cs">
+	    <DependentUpon>CreateOrLoadPositionView.axaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="View\CreateOrLoadPositionView.axaml.cs">
+	    <DependentUpon>CreateOrLoadPositionView.axaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 </Project>

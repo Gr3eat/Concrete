@@ -20,8 +20,11 @@
     <DataTemplate DataType="{x:Type vm:WelcomeViewModel}">
       <v:WelcomeView/>
     </DataTemplate>
+    <DataTemplate DataType="{x:Type vm:WelcomeViewModel}">
+      <v:WelcomeView/>
+    </DataTemplate>
   </Window.DataTemplates>
-  <Panel>
+  <Panel Margin="0">
     <ExperimentalAcrylicBorder IsHitTestVisible="False">
       <ExperimentalAcrylicBorder.Material>
         <ExperimentalAcrylicMaterial
