@@ -8,7 +8,7 @@ namespace Concrete.Mvvm.View;
 
 public partial class MainWindow : Window
 {
-	private IViewModel? _viewModel;
+	private IPrimaryViewModel? _viewModel;
 
 	public MainWindow()
 	{
@@ -19,7 +19,7 @@ public partial class MainWindow : Window
 #endif
 	}
 
-	public IViewModel? ViewModel
+	public IPrimaryViewModel? ViewModel
 	{
 		get => _viewModel;
 		set
@@ -36,13 +36,13 @@ public partial class MainWindow : Window
 
 	internal class DummyVm : INotifyPropertyChanged
 	{
-		private IViewModel? _viewModel;
+		private IPrimaryViewModel? _viewModel;
 
 		public DummyVm()
 		{
 		}
 
-		public IViewModel VM
+		public IPrimaryViewModel VM
 		{
 			get => _viewModel!;
 			set

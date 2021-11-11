@@ -1,5 +1,5 @@
 ﻿namespace Concrete.Mvvm.ViewModel;
 
-public interface ICourseEditViewModel : IViewModel
+public interface ICourseEditViewModel : IPrimaryViewModel
 {
 }

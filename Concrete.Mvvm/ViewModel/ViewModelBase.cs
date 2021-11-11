@@ -2,6 +2,6 @@
 
 namespace Concrete.Mvvm.ViewModel;
 
-public class ViewModelBase : ReactiveObject, IViewModel
+public class ViewModelBase : ReactiveObject, IPrimaryViewModel
 {
 }

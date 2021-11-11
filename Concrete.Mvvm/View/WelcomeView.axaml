@@ -15,7 +15,21 @@
       <RowDefinition Height="auto"/>
     </Grid.RowDefinitions>
 
-    <TextBlock Grid.ColumnSpan="2" Grid.Row="0">Welcome to Concrete!</TextBlock>
+    <TextBlock HorizontalAlignment="Center" Margin="10" Grid.ColumnSpan="2" Grid.Row="0" FontSize="30">Welcome to Concrete!</TextBlock>
+
+
+    <StackPanel Grid.Row="1" Grid.Column="1" Margin="20" HorizontalAlignment="Center">
+      <TextBlock FontSize="20">Create new</TextBlock>
+    </StackPanel>
+
+
+    <StackPanel Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Center">
+      <TextBlock FontSize="20">Load existing</TextBlock>
+    </StackPanel>
+    
+    <StackPanel HorizontalAlignment="Center" Margin="10" Grid.Row="2" Grid.Column="1">
+      <Button>Close</Button>
+    </StackPanel>
     
   </Grid>
 </UserControl>
