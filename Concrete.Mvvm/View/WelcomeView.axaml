@@ -1,4 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:vm="clr-namespace:Concrete.Mvvm.ViewModel;assembly=Concrete.Mvvm"
+             xmlns:v="clr-namespace:Concrete.Mvvm.View;assembly=Concrete.Mvvm"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -6,34 +8,49 @@
              Width="{Binding MaxWidth}"
              Height="{Binding MaxHeight}"
              x:Class="Concrete.Mvvm.View.WelcomeView">
-  <Grid>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="auto"/>
-      <RowDefinition Height="*"/>
-      <RowDefinition Height="auto"/>
-    </Grid.RowDefinitions>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="auto"/>
+		</Grid.RowDefinitions>
 
-    <TextBlock HorizontalAlignment="Center" Margin="10" Grid.ColumnSpan="2" Grid.Row="0" FontSize="30">Welcome to Concrete!</TextBlock>
-
-
-    <StackPanel Grid.Row="1" Grid.Column="1" Margin="20" HorizontalAlignment="Stretch">
-      <TextBlock Margin="20" FontSize="20">Create new</TextBlock>
-
-      <cn:CreateOrLoadPositionView/>
-    </StackPanel>
+		<TextBlock HorizontalAlignment="Center" Margin="10" Grid.ColumnSpan="2" Grid.Row="0" FontSize="30">Welcome to Concrete!</TextBlock>
 
 
-    <StackPanel Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Center">
-      <TextBlock Margin="20" FontSize="20">Load existing</TextBlock>
-    </StackPanel>
+		<StackPanel Grid.Row="1" Grid.Column="1" Margin="20" HorizontalAlignment="Stretch">
+			<TextBlock Margin="20" FontSize="20">Create new</TextBlock>
 
-    <StackPanel HorizontalAlignment="Center" Margin="10" Grid.Row="2" Grid.Column="1">
-      <Button>Close</Button>
-    </StackPanel>
+			<ItemsRepeater Items="{Binding CreateItems}">
+				<ItemsRepeater.ItemTemplate >
+					<DataTemplate>
+						<v:CreateOrLoadPositionView/>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
 
-  </Grid>
+			</ItemsRepeater>
+		</StackPanel>
+
+
+		<StackPanel Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Stretch">
+			<TextBlock Margin="20" FontSize="20">Load existing</TextBlock>
+			<ItemsRepeater Items="{Binding LoadItems}">
+				<ItemsRepeater.ItemTemplate >
+					<DataTemplate>
+						<v:CreateOrLoadPositionView/>
+					</DataTemplate>
+				</ItemsRepeater.ItemTemplate>
+
+			</ItemsRepeater>
+		</StackPanel>
+
+		<StackPanel HorizontalAlignment="Center" Margin="10" Grid.Row="2" Grid.Column="1">
+			<!--<Button>Close</Button>-->
+		</StackPanel>
+
+	</Grid>
 </UserControl>

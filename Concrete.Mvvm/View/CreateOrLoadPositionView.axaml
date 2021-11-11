@@ -17,9 +17,9 @@
         <RowDefinition Height="*"/>
         <RowDefinition Height="auto"/>
       </Grid.RowDefinitions>
-      <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15">Course</TextBlock>
-      <TextBlock Margin="10" TextWrapping="Wrap" Grid.ColumnSpan="3" Grid.Row="1">Very very long and very descriptive description of what the user is about to do, described at great length and in great detail.</TextBlock>
-      <Button Margin="10" Grid.Column="2" Grid.Row="2">Create</Button>
+			<TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" Text="{Binding Name}"/>
+      <TextBlock Margin="10" TextWrapping="Wrap" Grid.ColumnSpan="3" Grid.Row="1"  Text="{Binding Description}"/>
+			<Button Margin="10" Grid.Column="2" Grid.Row="2" Content="{Binding ButtonDescription}"/>
     </Grid>
   </Border>
 </UserControl>
