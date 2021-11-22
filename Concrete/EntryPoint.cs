@@ -16,6 +16,6 @@ internal class EntryPoint : IEntryPoint
 
 	public Window Start(string[] args) => new MainWindow()
 	{
-		ViewModel = new WelcomeViewModel()
+		ViewModel = new WelcomeViewModel(null!)
 	};
 }

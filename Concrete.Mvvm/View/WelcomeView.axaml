@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+						 xmlns:progRing="clr-namespace:AvaloniaProgressRing;assembly=AvaloniaProgressRing"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              Width="{Binding MaxWidth}"
              Height="{Binding MaxHeight}"
@@ -38,6 +39,17 @@
 
 		<StackPanel Grid.Row="1" Grid.Column="0" Margin="20" HorizontalAlignment="Stretch">
 			<TextBlock Margin="20" FontSize="20">Load existing</TextBlock>
+			<StackPanel IsVisible="False">
+				<progRing:ProgressRing 
+					Width="100"
+					Height="100"
+					IsActive="True"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"
+					Foreground="White"
+					Margin="10,10,0,0"/>
+				<TextBlock HorizontalAlignment="Center" Margin="10" FontSize="15">Loading recent projects</TextBlock>
+			</StackPanel>
 			<ItemsRepeater Items="{Binding LoadItems}">
 				<ItemsRepeater.ItemTemplate >
 					<DataTemplate>

@@ -2,10 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Concrete"
              x:Class="Concrete.App">
-    <Application.DataTemplates>
-    </Application.DataTemplates>
+	<Application.DataTemplates>
+	</Application.DataTemplates>
 
-    <Application.Styles>
-        <FluentTheme Mode="Dark"/>
-    </Application.Styles>
+	<Application.Styles>
+		<StyleInclude Source="avares://AvaloniaProgressRing/Styles/ProgressRing.xaml"/>
+		<FluentTheme Mode="Dark"/>
+	</Application.Styles>
 </Application>

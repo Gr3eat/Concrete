@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net6.0</TargetFrameworks>
@@ -12,6 +12,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
+	  <PackageReference Include="Deadpikle.AvaloniaProgressRing" Version="0.9.4" />
 	  <PackageReference Include="ReactiveUI" Version="16.3.10" />
     <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="6.0.2" />
     <PackageReference Include="Avalonia" Version="0.10.10" />
@@ -22,6 +23,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\Concrete.MoodleEditor\Concrete.MoodleEditor.csproj" />
 	  <ProjectReference Include="..\Concrete.Storage\Concrete.Storage.csproj" />
+	  <ProjectReference Include="..\Concrete.UserPreferences\Concrete.UserPreferences.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
